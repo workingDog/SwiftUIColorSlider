@@ -13,7 +13,7 @@ import SwiftUI
 */
 struct ColorSlider: View {
     
-    // the value of the slider (0->1)
+    // the value of the slider (0->100)
     @Binding<Float> var value: Float
     // the color array of the gradient (white + colors + black)
     @Binding<[Color]> var colors: [Color]
@@ -23,7 +23,7 @@ struct ColorSlider: View {
   
     
     var body: some View {
-            Slider(value: $value, in: 0...1.0, step: 0.01)
+            Slider(value: $value, in: 0...100.0, step: 1)
             .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
             .onAppear(perform: loadColors)
     }

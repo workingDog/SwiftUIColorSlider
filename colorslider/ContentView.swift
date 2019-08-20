@@ -13,7 +13,7 @@ import SwiftUI
  */
 struct ContentView: View {
 
-    // the color slider value (0->1)
+    // the color slider value (0->100)
     @State var value = Float(0)
     // the color array for the gradient
     @State var colors = [Color]()
@@ -31,11 +31,11 @@ struct ContentView: View {
     }
     
     func getColorTxt() -> String {
-        colors.isEmpty ? "" : String(colors[Int(value * 100)].description)
+        colors.isEmpty ? "" : String(colors[Int(value)].description)
     }
     
     func getColor() -> Color {
-        colors.isEmpty ? Color.clear : colors[Int(value * 100)]
+        colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
 }
