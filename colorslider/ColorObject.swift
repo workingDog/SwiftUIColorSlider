@@ -16,10 +16,9 @@ final class ColorObject: ObservableObject {
     @Published var value: Double = 0.0
     // the number of colors to display
     @Published var nColors: Double = 1.0
-    // the color array of the gradient
-    @Published var colors = [Color]()
-    
+    // saturation setting
     @Published var saturation: Double = 1.0
+    // brightness setting
     @Published var brightness: Double = 1.0
     
     // the current color
@@ -27,20 +26,20 @@ final class ColorObject: ObservableObject {
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
+    // default 100 colors
     init(nColors: Double = 100) {
-        setupColors(nColors: nColors)
+        self.nColors = nColors
     }
     
-    // initial setup with the given number of colors, default=100
-    func setupColors(nColors: Double = 100) {
-        self.nColors = nColors
-        guard nColors > 0 else { return }
+    // the color array of the gradient
+    var colors: [Color] {
+        guard nColors > 0 else { return [] }
         let delta: Double = (1/nColors * nColors).rounded(.up) / nColors
         let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
         let colorSet = hues.map({ hue -> Color in
             Color(hue: hue, saturation: saturation, brightness: brightness)
         }).reversed()
-        colors = [Color.white] + colorSet + [Color.black]
+        return [Color.white] + colorSet + [Color.black]
     }
-    
+ 
 }
