@@ -27,10 +27,6 @@ final class ColorObject: ObservableObject {
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
-    init() {
-        setupColors()
-    }
-    
     init(nColors: Double = 100) {
         setupColors(nColors: nColors)
     }
