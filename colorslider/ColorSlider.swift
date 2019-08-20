@@ -32,8 +32,8 @@ struct ColorSlider: View {
     
     func loadColors() {
         guard nColors > 0 else { return }
-        let val: Double = (1/nColors * nColors).rounded(.up) / nColors
-        let hues: [Double] = Array(stride(from: val, to: 1.0, by: val))
+        let delta: Double = (1/nColors * nColors).rounded(.up) / nColors
+        let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
         let colorSet = hues.map({ hue -> Color in
             Color(hue: hue, saturation: saturation, brightness: brightness)
         }).reversed()
