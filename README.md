@@ -5,15 +5,15 @@ It is used to select a color from a range of colors.
 
 The main elements are **ColorSlider.swift** and **ColorObject.swift**, see the demo in **ContenView.swift** for how to use it in your code.
 
-The key to using this **ColorSlider** in your code is to create a color object such as:
+The key to using this *ColorSlider* in your code is to create a **ColorObject** such as:
 
     @ObservedObject var colorObject = ColorObject()
 
-and pass it to the **ColorSlider**, such as:
+and pass it to the *ColorSlider*.
 
     ColorSlider(colorObject: colorObject)
     
-The current color selected can be obtain from the **ColorObject**, such as:
+The current color selected can be obtain from the **ColorObject** using:
     
     colorObject.color
     
