@@ -12,7 +12,7 @@ import SwiftUI
  * demo of a color slider
  */
 struct ContentView: View {
-
+    
     @ObservedObject var colorObject = ColorObject()
     
     var body: some View {
@@ -25,7 +25,7 @@ struct ContentView: View {
             Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
         }
     }
-   
+    
 }
 
 #if DEBUG

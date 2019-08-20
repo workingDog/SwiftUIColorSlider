@@ -16,10 +16,11 @@ struct ColorSlider: View {
     @ObservedObject var colorObject: ColorObject
     var width: CGFloat
     var height: CGFloat
+    var alignment: Alignment = .center
     
     var body: some View {
         Slider(value: $colorObject.value, in: 0...(colorObject.nColors > 0 ? Double(colorObject.nColors) : 1.0), step: 1)
-            .frame(width: width, height: height, alignment: .center) // need to have the frame first
+            .frame(width: width, height: height, alignment: alignment) // need to have the frame first
             .background(LinearGradient(gradient: Gradient(colors: colorObject.colors), startPoint: .leading, endPoint: .trailing))
     }
      

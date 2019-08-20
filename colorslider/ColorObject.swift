@@ -28,7 +28,7 @@ final class ColorObject: ObservableObject {
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
-    // default 100 colors
+    // default 100 colors and not gray scale
     init(nColors: Int = 100, grayScale: Bool = false) {
         self.grayScale = grayScale
         self.nColors = nColors
@@ -37,7 +37,7 @@ final class ColorObject: ObservableObject {
         }
     }
     
-    // the color array of the gradient
+    // the color array for the gradient
     var colors: [Color] {
         guard nColors > 0 else { return [] }
         let delta: Double = 1/Double(nColors).rounded(.up)
