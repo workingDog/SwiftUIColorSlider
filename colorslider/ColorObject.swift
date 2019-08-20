@@ -21,7 +21,7 @@ final class ColorObject: ObservableObject {
     // brightness setting
     @Published var brightness: Double = 1.0
     
-    let grayScale: Bool
+    var grayScale = false
     
     // the current color
     var color: Color {

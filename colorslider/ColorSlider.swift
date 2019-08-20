@@ -14,6 +14,7 @@ import SwiftUI
 struct ColorSlider: View {
     
     @ObservedObject var colorObject: ColorObject
+    
     var width: CGFloat
     var height: CGFloat
     var alignment: Alignment = .center
