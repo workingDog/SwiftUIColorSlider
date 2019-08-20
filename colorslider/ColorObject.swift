@@ -21,7 +21,7 @@ final class ColorObject: ObservableObject {
     // brightness setting
     @Published var brightness: Double = 1.0
     
-    let isGrayScale: Bool
+    let grayScale: Bool
     
     // the current color
     var color: Color {
@@ -29,10 +29,10 @@ final class ColorObject: ObservableObject {
     }
     
     // default 100 colors
-    init(nColors: Int = 100, isGrayScale: Bool = false) {
-        self.isGrayScale = isGrayScale
+    init(nColors: Int = 100, grayScale: Bool = false) {
+        self.grayScale = grayScale
         self.nColors = nColors
-        if isGrayScale {
+        if grayScale {
             self.saturation = 0.0
         }
     }
@@ -43,7 +43,7 @@ final class ColorObject: ObservableObject {
         let delta: Double = 1/Double(nColors).rounded(.up)
         let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
         let colorSet = hues.map({ hue -> Color in
-            Color(hue: isGrayScale ? 0 : hue, saturation: saturation, brightness: isGrayScale ? hue : brightness)
+            Color(hue: grayScale ? 0 : hue, saturation: saturation, brightness: grayScale ? hue : brightness)
         }).reversed()
         return [Color.white] + colorSet + [Color.black]
     }
