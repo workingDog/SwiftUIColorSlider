@@ -1,5 +1,9 @@
 
+# ColorSlider
+
+
 ![im01](image01.png)  ![im02](image02.png) 
+
 
 **ColorSlider** is a SwiftUI view (beta 5 and 6) that displays a color slider.
 It is used to select a color from a range of colors.
