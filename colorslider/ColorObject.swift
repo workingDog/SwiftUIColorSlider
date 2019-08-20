@@ -21,14 +21,20 @@ final class ColorObject: ObservableObject {
     // brightness setting
     @Published var brightness: Double = 1.0
     
+    let isGrayScale: Bool
+    
     // the current color
     var color: Color {
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
     // default 100 colors
-    init(nColors: Int = 100) {
+    init(nColors: Int = 100, isGrayScale: Bool = false) {
+        self.isGrayScale = isGrayScale
         self.nColors = nColors
+        if isGrayScale {
+            self.saturation = 0.0
+        }
     }
     
     // the color array of the gradient
@@ -37,9 +43,9 @@ final class ColorObject: ObservableObject {
         let delta: Double = 1/Double(nColors).rounded(.up)
         let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
         let colorSet = hues.map({ hue -> Color in
-            Color(hue: hue, saturation: saturation, brightness: brightness)
+            Color(hue: isGrayScale ? 0 : hue, saturation: saturation, brightness: isGrayScale ? hue : brightness)
         }).reversed()
         return [Color.white] + colorSet + [Color.black]
     }
- 
+    
 }

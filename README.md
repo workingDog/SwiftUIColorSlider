@@ -26,6 +26,9 @@ The following can be set in the **ColorObject**:
 
 **ColorSlider** will display a slider gradient of colors, from white to black.
 
+To display a gray scale slider, initialise the  **ColorObject** as:
+
+    @ObservedObject var colorObject = ColorObject(isGrayScale: true)
 
 ![im1](image1.png) ![im2](image2.png) ![im3](image3.png)
 
