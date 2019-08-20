@@ -10,9 +10,9 @@ The key to using this *ColorSlider* in your code is to create a **ColorObject** 
 
     @ObservedObject var colorObject = ColorObject()
 
-and pass it to the *ColorSlider*.
+and pass it to the *ColorSlider* as shown in *ContenView.swift*,
 
-    ColorSlider(colorObject: colorObject)
+    ColorSlider(colorObject: colorObject, width: 300, height: 40)
     
 The current color selected can be obtain from the **ColorObject** using:
     

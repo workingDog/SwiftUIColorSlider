@@ -14,9 +14,12 @@ import SwiftUI
 struct ColorSlider: View {
     
     @ObservedObject var colorObject: ColorObject
+    var width: CGFloat
+    var height: CGFloat
     
     var body: some View {
         Slider(value: $colorObject.value, in: 0...(colorObject.nColors > 0 ? Double(colorObject.nColors) : 1.0), step: 1)
+            .frame(width: width, height: height, alignment: .center) // need to have the frame first
             .background(LinearGradient(gradient: Gradient(colors: colorObject.colors), startPoint: .leading, endPoint: .trailing))
     }
      
@@ -25,7 +28,7 @@ struct ColorSlider: View {
 #if DEBUG
 struct ColorSlider_Previews: PreviewProvider {
     static var previews: some View {
-        ColorSlider(colorObject: ColorObject())
+        ColorSlider(colorObject: ColorObject(), width: 300, height: 40)
     }
 }
 #endif

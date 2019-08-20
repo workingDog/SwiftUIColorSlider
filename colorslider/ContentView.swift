@@ -17,16 +17,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ColorSlider(colorObject: colorObject)
+            ColorSlider(colorObject: colorObject, width: 300, height: 40)
                 .cornerRadius(25)
                 .overlay(RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 1).foregroundColor(Color.black))
-                .frame(width: CGFloat(300), height: CGFloat(40), alignment: .center)
                 .accentColor(.clear)
             Text("\(colorObject.value)")
             Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
         }
     }
-    
+   
 }
 
 #if DEBUG
