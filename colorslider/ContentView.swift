@@ -17,7 +17,7 @@ struct ContentView: View {
     @State var value = Double(0)
     // the color array for the gradient
     @State var colors = [Color]()
-    // the number of colors to display
+    // the number of colors to display, nColors > 0
     let nColors: Double = 100
     
     

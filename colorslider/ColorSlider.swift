@@ -20,18 +20,18 @@ struct ColorSlider: View {
 
     @State var saturation: Double
     @State var brightness: Double
-    
+    // the number of colors to display
     var nColors: Double
 
 
     var body: some View {
-            Slider(value: $value, in: 0...nColors, step: 1)
+        Slider(value: $value, in: 0...(nColors > 0 ? nColors : 1), step: 1)
             .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
             .onAppear(perform: loadColors)
     }
     
     func loadColors() {
-        guard nColors != 0 else { return }
+        guard nColors > 0 else { return }
         let val: Double = (1/nColors * nColors).rounded(.up) / nColors
         let hues: [Double] = Array(stride(from: val, to: 1.0, by: val))
         let colorSet = hues.map({ hue -> Color in
