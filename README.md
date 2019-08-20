@@ -29,5 +29,3 @@ The following can be set in the **ColorObject**:
 
 ![im1](image1.png) ![im2](image2.png) ![im3](image3.png)
 
-
- 

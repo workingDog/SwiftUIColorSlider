@@ -18,6 +18,7 @@ struct ColorSlider: View {
     var body: some View {
         Slider(value: $colorObject.value, in: 0...(colorObject.nColors > 0 ? Double(colorObject.nColors) : 1.0), step: 1)
             .background(LinearGradient(gradient: Gradient(colors: colorObject.colors), startPoint: .leading, endPoint: .trailing))
+            .accentColor(.clear)
     }
      
 }
