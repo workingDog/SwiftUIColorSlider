@@ -13,7 +13,7 @@ import SwiftUI
  */
 struct ContentView: View {
 
-    @ObservedObject var colorObject = ColorObject(grayScale: true)
+    @ObservedObject var colorObject = ColorObject()
     
     var body: some View {
         VStack {
