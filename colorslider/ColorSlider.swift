@@ -13,23 +13,27 @@ import SwiftUI
 */
 struct ColorSlider: View {
     
-    // the value of the slider (0->100)
-    @Binding<Float> var value: Float
+    // the value of the slider (0->nColors)
+    @Binding<Double> var value: Double
     // the color array of the gradient (white + colors + black)
     @Binding<[Color]> var colors: [Color]
 
     @State var saturation: Double
     @State var brightness: Double
-  
     
+    var nColors: Double
+
+
     var body: some View {
-            Slider(value: $value, in: 0...100.0, step: 1)
+            Slider(value: $value, in: 0...nColors, step: 1)
             .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
             .onAppear(perform: loadColors)
     }
     
     func loadColors() {
-        let hues: [Double] = Array(stride(from: 0.01, to: 1.0, by: 0.01))
+        guard nColors != 0 else { return }
+        let val: Double = (1/nColors * nColors).rounded(.up) / nColors
+        let hues: [Double] = Array(stride(from: val, to: 1.0, by: val))
         let colorSet = hues.map({ hue -> Color in
             Color(hue: hue, saturation: saturation, brightness: brightness)
         }).reversed()

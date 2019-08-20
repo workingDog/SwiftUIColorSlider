@@ -13,15 +13,17 @@ import SwiftUI
  */
 struct ContentView: View {
 
-    // the color slider value (0->100)
-    @State var value = Float(0)
+    // the color slider value (0->nColors)
+    @State var value = Double(0)
     // the color array for the gradient
     @State var colors = [Color]()
+    // the number of colors to display
+    let nColors: Double = 100
     
     
     var body: some View {
         VStack {
-            ColorSlider(value: $value, colors: $colors, saturation: 1, brightness: 1)
+            ColorSlider(value: $value, colors: $colors, saturation: 1, brightness: 1, nColors: nColors)
                 .cornerRadius(25)
                 .overlay(RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 1).foregroundColor(Color.black))
                 .frame(width: CGFloat(300), height: CGFloat(40), alignment: .center)
