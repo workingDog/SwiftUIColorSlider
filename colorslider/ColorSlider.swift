@@ -13,39 +13,19 @@ import SwiftUI
 */
 struct ColorSlider: View {
     
-    // the value of the slider (0->nColors)
-    @Binding<Double> var value: Double
-    // the color array of the gradient (white + colors + black)
-    @Binding<[Color]> var colors: [Color]
-
-    @State var saturation: Double
-    @State var brightness: Double
-    // the number of colors to display
-    var nColors: Double
-
-
-    var body: some View {
-        Slider(value: $value, in: 0...(nColors > 0 ? nColors : 1), step: 1)
-            .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing))
-            .onAppear(perform: loadColors)
-    }
+    @ObservedObject var colorObject: ColorObject
     
-    func loadColors() {
-        guard nColors > 0 else { return }
-        let delta: Double = (1/nColors * nColors).rounded(.up) / nColors
-        let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
-        let colorSet = hues.map({ hue -> Color in
-            Color(hue: hue, saturation: saturation, brightness: brightness)
-        }).reversed()
-        colors = [Color.white] + colorSet + [Color.black]
+    var body: some View {
+        Slider(value: $colorObject.value, in: 0...(colorObject.nColors > 0 ? colorObject.nColors : 1), step: 1)
+            .background(LinearGradient(gradient: Gradient(colors: colorObject.colors), startPoint: .leading, endPoint: .trailing))
     }
-   
+     
 }
 
-//#if DEBUG
-//struct ColorSlider_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ColorSlider()
-//    }
-//}
-//#endif
+#if DEBUG
+struct ColorSlider_Previews: PreviewProvider {
+    static var previews: some View {
+        ColorSlider(colorObject: ColorObject())
+    }
+}
+#endif

@@ -13,31 +13,17 @@ import SwiftUI
  */
 struct ContentView: View {
 
-    // the color slider value (0->nColors)
-    @State var value = Double(0)
-    // the color array for the gradient
-    @State var colors = [Color]()
-    // the number of colors to display, nColors > 0
-    let nColors: Double = 100
-    
+    @ObservedObject var colorObject = ColorObject()
     
     var body: some View {
         VStack {
-            ColorSlider(value: $value, colors: $colors, saturation: 1, brightness: 1, nColors: nColors)
+            ColorSlider(colorObject: colorObject)
                 .cornerRadius(25)
                 .overlay(RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 1).foregroundColor(Color.black))
                 .frame(width: CGFloat(300), height: CGFloat(40), alignment: .center)
-            Text("\(value)")
-            Text(getColorTxt()).foregroundColor(getColor() == .white ? .black : getColor())
+            Text("\(colorObject.value)")
+            Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
         }
-    }
-    
-    func getColorTxt() -> String {
-        colors.isEmpty ? "" : String(colors[Int(value)].description)
-    }
-    
-    func getColor() -> Color {
-        colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
 }
