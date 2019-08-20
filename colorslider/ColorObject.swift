@@ -15,7 +15,7 @@ final class ColorObject: ObservableObject {
     // the slider value (0->nColors)
     @Published var value: Double = 0.0
     // the number of colors to display
-    @Published var nColors: Double = 1.0
+    @Published var nColors: Int = 1
     // saturation setting
     @Published var saturation: Double = 1.0
     // brightness setting
@@ -27,14 +27,14 @@ final class ColorObject: ObservableObject {
     }
     
     // default 100 colors
-    init(nColors: Double = 100) {
+    init(nColors: Int = 100) {
         self.nColors = nColors
     }
     
     // the color array of the gradient
     var colors: [Color] {
         guard nColors > 0 else { return [] }
-        let delta: Double = (1/nColors * nColors).rounded(.up) / nColors
+        let delta: Double = 1/Double(nColors).rounded(.up)
         let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
         let colorSet = hues.map({ hue -> Color in
             Color(hue: hue, saturation: saturation, brightness: brightness)
