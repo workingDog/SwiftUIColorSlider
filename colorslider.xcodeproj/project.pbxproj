@@ -14,6 +14,7 @@
 		C73CB14C230A53630083C54F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C73CB14B230A53630083C54F /* Preview Assets.xcassets */; };
 		C73CB14F230A53630083C54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73CB14D230A53630083C54F /* LaunchScreen.storyboard */; };
 		C7499002230BA58C001D859E /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7499001230BA58C001D859E /* ColorObject.swift */; };
+		C7499004230BB120001D859E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7499003230BB11F001D859E /* README.md */; };
 		C7F2E759230A99580065DA59 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F2E758230A99580065DA59 /* ColorSlider.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		C73CB14E230A53630083C54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C73CB150230A53630083C54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7499001230BA58C001D859E /* ColorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
+		C7499003230BB11F001D859E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C7F2E758230A99580065DA59 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +46,7 @@
 		C73CB136230A53620083C54F = {
 			isa = PBXGroup;
 			children = (
+				C7499003230BB11F001D859E /* README.md */,
 				C73CB141230A53620083C54F /* colorslider */,
 				C73CB140230A53620083C54F /* Products */,
 			);
@@ -141,6 +144,7 @@
 			files = (
 				C73CB14F230A53630083C54F /* LaunchScreen.storyboard in Resources */,
 				C73CB14C230A53630083C54F /* Preview Assets.xcassets in Resources */,
+				C7499004230BB120001D859E /* README.md in Resources */,
 				C73CB149230A53630083C54F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
