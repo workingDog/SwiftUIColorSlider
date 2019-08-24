@@ -14,18 +14,15 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var colorObject = ColorObject()
-    
+      
     var body: some View {
         VStack {
             ColorSlider(colorObject: colorObject, width: 300, height: 40)
-                .cornerRadius(25)
-                .overlay(RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 1).foregroundColor(Color.black))
-                .accentColor(.clear)
             Text("\(colorObject.value)")
             Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
         }
     }
-    
+     
 }
 
 #if DEBUG

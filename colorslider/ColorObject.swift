@@ -20,6 +20,11 @@ final class ColorObject: ObservableObject {
     @Published var saturation: Double = 1.0
     // brightness setting
     @Published var brightness: Double = 1.0
+    // to allow dragging the slider around the screen
+    @Published var isDraggable: Bool = true
+    
+    // internal flag for the dragging and gesture methods
+    @Published var flag: Bool = true
     
     var grayScale = false
     
@@ -28,10 +33,11 @@ final class ColorObject: ObservableObject {
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
-    // default 100 colors and not gray scale
-    init(nColors: Int = 100, grayScale: Bool = false) {
+    // default 100 colors, not gray scale and is draggable
+    init(nColors: Int = 100, grayScale: Bool = false, isDraggable: Bool = true) {
         self.grayScale = grayScale
         self.nColors = nColors
+        self.isDraggable = isDraggable
         if grayScale {
             self.saturation = 0.0
         }
@@ -46,6 +52,16 @@ final class ColorObject: ObservableObject {
             Color(hue: grayScale ? 0 : hue, saturation: saturation, brightness: grayScale ? hue : brightness)
         }).reversed()
         return [Color.white] + colorSet + [Color.black]
+    }
+    
+    // the color gradient for the background
+    var colorGradient: LinearGradient {
+        LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing)
+    }
+    
+    // the slider color range of values
+    var colorRange: ClosedRange<Double> {
+        0...(nColors > 0 ? Double(nColors) : 1.0)
     }
     
 }
