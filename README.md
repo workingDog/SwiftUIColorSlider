@@ -6,7 +6,7 @@
 
 
 **ColorSlider** is a SwiftUI view (beta 5 and 6) that displays a color slider.
-It is used to select a color from a range of colors.
+It is used to dynamically select a color from a range of colors or grayscale.
 
 The main elements are **ColorSlider.swift** and **ColorObject.swift**, see the demo in **ContenView.swift** for how to use it in your code.
 
@@ -18,7 +18,7 @@ and pass it to the *ColorSlider* as shown in *ContenView.swift*,
 
     ColorSlider(colorObject: colorObject, width: 300, height: 40)
     
-The current color selected can be obtain from the **ColorObject** using:
+As the slider knob is changed, the current color selected can be obtain from the **ColorObject** using:
     
     colorObject.color
     
@@ -27,7 +27,7 @@ The following can be set to customise the **ColorObject**:
 - nColors, the number of colors to display in the slider, default 100.
 - saturation, the desired saturation value, default 1.
 - brightness, the desired brightness value, default 1.
-- isDraggable, to allow the slider to be dragged around the screen, default=true
+- isDraggable, to allow the slider to be dragged around the screen, default true
 
 **ColorSlider** will display a slider gradient of colors, from white to black.
 

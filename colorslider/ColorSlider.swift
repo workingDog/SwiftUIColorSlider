@@ -22,17 +22,18 @@ struct ColorSlider: View {
       var lineWidth = CGFloat(1)
       var borderColor = Color.black
        
-      @State var acc = CGSize.zero
+      @State var prev = CGSize.zero
       @State var pos = CGSize.zero
       
       var body: some View {
+        
           let drag = DragGesture()
               .onChanged { value in
-                  self.pos = CGSize(width: value.translation.width + self.acc.width, height: value.translation.height + self.acc.height)
+                  self.pos = CGSize(width: value.translation.width + self.prev.width, height: value.translation.height + self.prev.height)
           }
           .onEnded { value in
-              self.pos = CGSize(width: value.translation.width + self.acc.width, height: value.translation.height + self.acc.height)
-              self.acc = self.pos
+              self.pos = CGSize(width: value.translation.width + self.prev.width, height: value.translation.height + self.prev.height)
+              self.prev = self.pos
           }
           
           return Slider(value: $colorObject.value, in: colorObject.colorRange, step: 1) { _ in

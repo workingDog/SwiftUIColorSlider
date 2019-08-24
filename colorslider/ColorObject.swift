@@ -9,7 +9,9 @@
 import Foundation
 import SwiftUI
 
-
+/**
+ * the ColorSlider companion observable object
+ */
 final class ColorObject: ObservableObject {
     
     // the slider value (0->nColors)
