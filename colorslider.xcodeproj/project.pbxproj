@@ -15,6 +15,7 @@
 		C73CB14F230A53630083C54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73CB14D230A53630083C54F /* LaunchScreen.storyboard */; };
 		C7499002230BA58C001D859E /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7499001230BA58C001D859E /* ColorObject.swift */; };
 		C7499004230BB120001D859E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7499003230BB11F001D859E /* README.md */; };
+		C78632762311F7D9002E08E1 /* ColoSlider2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78632752311F7D9002E08E1 /* ColoSlider2.swift */; };
 		C7F2E759230A99580065DA59 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F2E758230A99580065DA59 /* ColorSlider.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		C73CB150230A53630083C54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7499001230BA58C001D859E /* ColorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		C7499003230BB11F001D859E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C78632752311F7D9002E08E1 /* ColoSlider2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoSlider2.swift; sourceTree = "<group>"; };
 		C7F2E758230A99580065DA59 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				C73CB146230A53620083C54F /* ContentView.swift */,
 				C7F2E758230A99580065DA59 /* ColorSlider.swift */,
 				C7499001230BA58C001D859E /* ColorObject.swift */,
+				C78632752311F7D9002E08E1 /* ColoSlider2.swift */,
 				C73CB148230A53630083C54F /* Assets.xcassets */,
 				C73CB14D230A53630083C54F /* LaunchScreen.storyboard */,
 				C73CB150230A53630083C54F /* Info.plist */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78632762311F7D9002E08E1 /* ColoSlider2.swift in Sources */,
 				C73CB143230A53620083C54F /* AppDelegate.swift in Sources */,
 				C7499002230BA58C001D859E /* ColorObject.swift in Sources */,
 				C73CB145230A53620083C54F /* SceneDelegate.swift in Sources */,
