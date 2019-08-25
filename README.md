@@ -1,5 +1,5 @@
 
-# ColorSlider
+# SwiftUI ColorSlider
 
 
 ![im01](image01.png)  ![im02](image02.png) 
