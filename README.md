@@ -5,7 +5,7 @@
 ![im01](image01.png)  ![im02](image02.png) 
 
 
-**ColorSlider** is a SwiftUI view (beta 6) that displays a color slider.
+**ColorSlider** is a SwiftUI view (xCode 11 beta 6) that displays a color slider.
 It is used to dynamically select a color from a range of colors or grayscale.
 
 The main elements are **ColorSlider.swift** and **ColorObject.swift**, see the demo in **ContenView.swift** for how to use it in your code.
