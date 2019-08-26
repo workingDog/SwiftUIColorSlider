@@ -18,8 +18,8 @@ struct ColorSlider: View {
       var width: CGFloat
       var height: CGFloat
       var alignment: Alignment = .center
-      var cornerRadius = CGFloat(25)
-      var lineWidth = CGFloat(1)
+      var cornerRadius = CGFloat(20)
+      var lineWidth = CGFloat(0)
       var borderColor = Color.black
        
       @State var prev = CGSize.zero
@@ -48,6 +48,7 @@ struct ColorSlider: View {
           .background(colorObject.colorGradient)  // need to have the background second
           .cornerRadius(cornerRadius)
           .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: lineWidth).foregroundColor(borderColor))
+          .accentColor(.clear)
           .offset(x: self.colorObject.isDraggable ? self.pos.width : 0, y: self.colorObject.isDraggable ? self.pos.height : 0)
           .animation(.linear(duration: 0.3))
           .gesture(self.colorObject.isDraggable && self.colorObject.flag ? drag : nil)
