@@ -39,6 +39,9 @@ For convenience, to display a static slider, initialise the  **ColorObject** as:
 
     @ObservedObject var colorObject = ColorObject(isDraggable: false)    
     
+### Current issues
+
+A vertical slider with rounded corners is not working.
 
 ![im1](image1.png) ![im2](image2.png) ![im3](image3.png)
 

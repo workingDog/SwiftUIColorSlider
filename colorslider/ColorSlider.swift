@@ -17,9 +17,8 @@ struct ColorSlider: View {
       
       var width: CGFloat
       var height: CGFloat
-      var alignment: Alignment = .center
-      var cornerRadius = CGFloat(20)
-      var lineWidth = CGFloat(1)
+      var cornerRadius = CGFloat(0)
+      var lineWidth = CGFloat(0)
       var borderColor = Color.black
        
       @State var prev = CGSize.zero
@@ -45,8 +44,10 @@ struct ColorSlider: View {
                   }
               }
           }
-          .frame(width: width, height: height, alignment: alignment)
+          .frame(width: width, height: height)
           .background(colorObject.colorGradient)
+    //        .cornerRadius(cornerRadius)
+          .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: lineWidth).foregroundColor(borderColor))
           .accentColor(.clear)
           .offset(x: self.colorObject.isDraggable ? self.pos.width : 0, y: self.colorObject.isDraggable ? self.pos.height : 0)
           .animation(.linear(duration: 0.3))
