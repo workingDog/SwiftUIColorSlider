@@ -47,7 +47,7 @@ struct ColorSlider: View {
           }
           .frame(width: width, height: height)
           .background(colorObject.colorGradient)
-          .mask(RoundedRectangle(cornerRadius: 20))
+          .mask(RoundedRectangle(cornerRadius: cornerRadius))
           .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: lineWidth).foregroundColor(borderColor))
           .accentColor(.clear)
           .offset(x: self.colorObject.isDraggable ? self.pos.width : 0, y: self.colorObject.isDraggable ? self.pos.height : 0)

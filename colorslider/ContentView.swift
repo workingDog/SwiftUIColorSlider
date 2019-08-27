@@ -17,7 +17,7 @@ struct ContentView: View {
       
     var body: some View {
         VStack {
-            ColorSlider(colorObject: colorObject, width: 300, height: 40)
+            ColorSlider(colorObject: colorObject, width: 300, height: 40, cornerRadius: 20)
             //  .rotationEffect(.degrees(90))
             Text("\(colorObject.value)")
             Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
