@@ -24,10 +24,7 @@ final class ColorObject: ObservableObject {
     @Published var brightness: Double = 1.0
     // to allow dragging the slider around the screen
     @Published var isDraggable: Bool = true
-    
-    // internal flag for the dragging and gesture methods
-    @Published var flag: Bool = true
-    
+
     var grayScale = false
     
     // the current color

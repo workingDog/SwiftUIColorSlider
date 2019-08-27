@@ -19,11 +19,12 @@ struct ColorSlider: View {
       var height: CGFloat
       var alignment: Alignment = .center
       var cornerRadius = CGFloat(20)
-      var lineWidth = CGFloat(0)
+      var lineWidth = CGFloat(1)
       var borderColor = Color.black
        
       @State var prev = CGSize.zero
       @State var pos = CGSize.zero
+      @State var flag = true
       
       var body: some View {
         
@@ -38,20 +39,18 @@ struct ColorSlider: View {
           
           return Slider(value: $colorObject.value, in: colorObject.colorRange, step: 1) { _ in
               if self.colorObject.isDraggable {
-                  self.colorObject.flag = false
+                  self.flag = false
                   DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                      self.colorObject.flag = true
+                      self.flag = true
                   }
               }
           }
-          .frame(width: width, height: height, alignment: alignment)  // need to have the frame first
-          .background(colorObject.colorGradient)  // need to have the background second
-          .cornerRadius(cornerRadius)
-          .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: lineWidth).foregroundColor(borderColor))
+          .frame(width: width, height: height, alignment: alignment)
+          .background(colorObject.colorGradient)
           .accentColor(.clear)
           .offset(x: self.colorObject.isDraggable ? self.pos.width : 0, y: self.colorObject.isDraggable ? self.pos.height : 0)
           .animation(.linear(duration: 0.3))
-          .gesture(self.colorObject.isDraggable && self.colorObject.flag ? drag : nil)
+          .gesture(self.colorObject.isDraggable && self.flag ? drag : nil)
       }
     
 }
