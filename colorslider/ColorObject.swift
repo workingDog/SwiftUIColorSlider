@@ -26,17 +26,9 @@ final class ColorObject: ObservableObject {
     @Published var isDraggable: Bool = true
 
     var grayScale = false
-    
-    // the size of the white and black area at the start and end of the slider.
-    // the color array start at index value zero, this gives,
-    // the slider values, from 0 to (blockSize - 1) correspond to white, and
-    // the slider values, from (nColors + (blockSize - 1)) to (nColors + (2*blockSize) - 2)
-    // correspond to black,
-    var blockSize = 1
-    
+
     // the current color
     var color: Color {
-        print("===> colors: \(colors.count)  Int(value): \(Int(value)) whiteBlock: \(whiteBlock.count) ")
         return colors.isEmpty ? Color.clear : colors[Int(value)]
     }
     
@@ -58,18 +50,9 @@ final class ColorObject: ObservableObject {
         let colorSet = hues.map({ hue -> Color in
             Color(hue: grayScale ? 0 : hue, saturation: saturation, brightness: grayScale ? hue : brightness)
         }).reversed()
-        return whiteBlock + colorSet + blackBlock
-            //[Color.white] + colorSet + [Color.black]
+        return [Color.white] + colorSet + [Color.black]
     }
-    
-    var whiteBlock: [Color] {
-         Array(repeating: Color.white, count: blockSize)
-    }
-    
-    var blackBlock: [Color] {
-         Array(repeating: Color.black, count: blockSize)
-    }
-    
+ 
     // the color gradient for the background
     var colorGradient: LinearGradient {
         LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing)
@@ -77,8 +60,7 @@ final class ColorObject: ObservableObject {
     
     // the slider color range of values
     var colorRange: ClosedRange<Double> {
-        let n = nColors + (2*blockSize) - 2
-        return 0...(n > 0 ? Double(n) : 1.0)
+        return 0...(nColors > 0 ? Double(nColors) : 1.0)
     }
     
 }
