@@ -21,6 +21,7 @@ struct ContentView: View {
             //  .rotationEffect(.degrees(90))
             Text("\(colorObject.value)")
             Text(String(colorObject.color.description)).foregroundColor(colorObject.color == .white ? .black : colorObject.color)
+            Circle().frame(width: 50, height: 50).overlay(Circle().stroke(Color.black,lineWidth: 1)).foregroundColor(colorObject.color)
         }
     }
      
