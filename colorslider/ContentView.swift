@@ -15,11 +15,9 @@ struct ContentView: View {
     
     @ObservedObject var colorObject1 = ColorObject()
     @ObservedObject var colorObject2 = ColorObject()
-    @ObservedObject var colorObject3 = ColorObject()
     
     @State var slider1: ColorSlider?
     @State var slider2: ColorSlider?
-    @State var slider3: ColorSlider?
       
     var body: some View {
         VStack (spacing: 20) {
