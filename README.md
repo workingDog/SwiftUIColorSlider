@@ -40,5 +40,12 @@ For convenience, to display a static slider, initialise the  **ColorObject** as:
 
     @ObservedObject var colorObject = ColorObject(isDraggable: false)    
 
+## Example of vertical sliders
+
+The color slider on the left is with the default settings.
+
+The color slider on the right has nColors=10, and a color bandSize=10
+
+
 ![im01](v1.png)  ![im01](v2.png) 
 
