@@ -42,6 +42,10 @@ For convenience, to display a static slider, initialise the  **ColorObject** as:
 
 ## Example of vertical sliders
 
+For a vertical slider just add: 
+
+    .rotationEffect(.degrees(90))
+
 The color slider on the left is with the default settings.
 
 The color slider on the right has nColors=10, and a color bandSize=10
