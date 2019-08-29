@@ -28,7 +28,7 @@ The following can be set to customise the **ColorObject** and thus the **ColorSl
 - saturation, the desired saturation value, default 1.
 - brightness, the desired brightness value, default 1.
 - isDraggable, to allow the slider to be dragged around the screen, default true
-- blockSize, to set the thichness of the color bands in the slider, default 1.
+- bandSize, to set the thichness of the color bands in the slider, default 1.
 
 **ColorSlider** will display a slider gradient of colors, from white to black.
 

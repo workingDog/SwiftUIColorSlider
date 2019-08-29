@@ -9,7 +9,7 @@
 import SwiftUI
 
 /**
- * demo of a color slider
+ * demo of a color sliders
  */
 struct ContentView: View {
     
@@ -32,10 +32,10 @@ struct ContentView: View {
         }.onAppear(perform: doSetup)
     }
      
-    func doSetup() { 
-        // example of using the blockSize to modify the thickness of the color band
+    func doSetup() {
+        // example of using the bandSize to modify the thickness of the color bands
         colorObject2.nColors = 10
-        colorObject2.blockSize = 10
+        colorObject2.bandSize = 10
     }
 }
 

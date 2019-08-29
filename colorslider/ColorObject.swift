@@ -29,7 +29,7 @@ final class ColorObject: ObservableObject {
     var grayScale = false
     
     // the thickness of the bar of each color in the slider.
-    var blockSize = 1
+    var bandSize = 1
     
     // the current color
     var color: Color {
@@ -51,22 +51,21 @@ final class ColorObject: ObservableObject {
         guard nColors > 0 else { return [] }
         let delta: Double = 1/Double(nColors).rounded(.up)
         let hues: [Double] = Array(stride(from: delta, to: 1.0, by: delta))
-        var temp = [Color]()
+        var colorSet = [Color]()
         for hue in hues {
-            for _ in 0..<self.blockSize {
-                temp.append(Color(hue: grayScale ? 0 : hue, saturation: saturation, brightness: grayScale ? hue : brightness))
+            for _ in 0..<self.bandSize {
+                colorSet.append(Color(hue: grayScale ? 0 : hue, saturation: saturation, brightness: grayScale ? hue : brightness))
             }
         }
-        let colorSet = temp.reversed()
-        return whiteBlock + colorSet + blackBlock
+        return whiteBlock + colorSet.reversed() + blackBlock
     }
     
     var whiteBlock: [Color] {
-         Array(repeating: Color.white, count: blockSize)
+         Array(repeating: Color.white, count: bandSize)
     }
     
     var blackBlock: [Color] {
-         Array(repeating: Color.black, count: blockSize)
+         Array(repeating: Color.black, count: bandSize)
     }
     
     // the color gradient for the background
