@@ -40,4 +40,4 @@ For convenience, to display a static slider, initialise the  **ColorObject** as:
 
     @ObservedObject var colorObject = ColorObject(isDraggable: false)    
 
-![im01](v1.png)  ![im01](v1.png) 
+![im01](v1.png)  ![im01](v2.png) 
