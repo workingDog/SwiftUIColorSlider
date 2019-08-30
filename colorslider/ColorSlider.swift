@@ -80,7 +80,8 @@ struct ColorSlider: View {
 #if DEBUG
 struct ColorSlider_Previews: PreviewProvider {
     static var previews: some View {
-        ColorSlider(colorObject: ColorObject(), width: 300, height: 40)
+                ColorSlider(colorObject: ColorObject(), width: 300, height: 40,
+                    cornerRadius: 15, lineWidth: 1, borderColor: Color.black, onEditing: {(v: Bool) in})
     }
 }
 #endif
