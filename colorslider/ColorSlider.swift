@@ -26,6 +26,19 @@ struct ColorSlider: View {
     @State var pos = CGSize.zero
     @State var flag = true
     
+    var editing: (Bool) -> Void
+    
+    init(colorObject: ColorObject, width: CGFloat, height: CGFloat, cornerRadius: CGFloat,
+         lineWidth: CGFloat, borderColor: Color, onEditing: @escaping (Bool) -> Void) {
+        self.colorObject = colorObject
+        self.width = width
+        self.height = height
+        self.cornerRadius = cornerRadius
+        self.lineWidth = lineWidth
+        self.borderColor = borderColor
+        self.editing = onEditing
+    }
+
     var body: some View {
         
         let drag = DragGesture()
