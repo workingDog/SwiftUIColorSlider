@@ -26,10 +26,12 @@ struct ColorSlider: View {
     @State var pos = CGSize.zero
     @State var flag = true
     
-    var editing: (Bool) -> Void
+    typealias Edit = (Bool) -> ()
     
-    init(colorObject: ColorObject, width: CGFloat, height: CGFloat, cornerRadius: CGFloat,
-         lineWidth: CGFloat, borderColor: Color, onEditing: @escaping (Bool) -> Void) {
+    var editing: Edit?
+    
+    init(colorObject: ColorObject, width: CGFloat, height: CGFloat, cornerRadius: CGFloat = CGFloat(0),
+         lineWidth: CGFloat = CGFloat(0), borderColor: Color = Color.black, onEditing: Edit? = nil) {
         self.colorObject = colorObject
         self.width = width
         self.height = height
@@ -80,8 +82,7 @@ struct ColorSlider: View {
 #if DEBUG
 struct ColorSlider_Previews: PreviewProvider {
     static var previews: some View {
-                ColorSlider(colorObject: ColorObject(), width: 300, height: 40,
-                    cornerRadius: 15, lineWidth: 1, borderColor: Color.black, onEditing: {(v: Bool) in})
+                ColorSlider(colorObject: ColorObject(), width: 300, height: 40)
     }
 }
 #endif
