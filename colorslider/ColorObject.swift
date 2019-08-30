@@ -24,18 +24,16 @@ final class ColorObject: ObservableObject {
     @Published var brightness: Double = 1.0
     // to allow dragging the slider around the screen
     @Published var isDraggable: Bool = true
+    
+    // the current color
+    @Published var color = Color.clear
 
     // set as grayscale or not
     var grayScale = false
     
     // the thickness of the bar of each color in the slider.
     var bandSize = 1
-    
-    // the current color
-    var color: Color {
-        return colors.isEmpty ? Color.clear : colors[Int(value)]
-    }
-    
+
     // default 100 colors, not gray scale and is draggable
     init(nColors: Int = 100, grayScale: Bool = false, isDraggable: Bool = true) {
         self.grayScale = grayScale
