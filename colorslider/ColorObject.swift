@@ -26,7 +26,7 @@ final class ColorObject: ObservableObject {
     @Published var isDraggable: Bool = true
     
     // the current color
-    @Published var color = Color.clear
+    @Published var color = Color.white
 
     // set as grayscale or not
     var grayScale = false
