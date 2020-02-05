@@ -19,14 +19,14 @@ struct ContentView: View {
     var body: some View {
         VStack (spacing: 20) {
             
-            ColorSlider(colorObject: colorObject1, width: 300, height: 40, cornerRadius: 20)
+            ColorSlider(colorObject: colorObject1, width: 300, height: 40, cornerRadius: 20, lineWidth: 1)
             Text("\(colorObject1.value)")
             Text(String(colorObject1.color.description))
                 .foregroundColor(colorObject1.color == .white ? .black : colorObject1.color)
             Circle().frame(width: 50, height: 50)
                 .overlay(Circle().stroke(Color.black,lineWidth: 1)).foregroundColor(colorObject1.color)
             
-            ColorSlider(colorObject: colorObject2, width: 300, height: 40, cornerRadius: 20)
+            ColorSlider(colorObject: colorObject2, width: 300, height: 40, cornerRadius: 20, lineWidth: 1)
             Text("\(colorObject2.value)")
             Text(String(colorObject2.color.description))
                 .foregroundColor(colorObject2.color == .white ? .black : colorObject2.color)
