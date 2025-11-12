@@ -2,6 +2,12 @@
 # SwiftUI ColorSlider
 
 
+# DEPRECATED 
+
+## see the newer [ColorSlider](https://github.com/workingDog/ColorSlider)
+
+
+
  ![im01](image01.png)  ![im02](image02.png) 
 
 
